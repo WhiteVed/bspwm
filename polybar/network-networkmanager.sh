@@ -6,7 +6,7 @@ network_print() {
 
     if [ -n "$connection_list" ] && [ "$(echo "$connection_list" | wc -l)" -gt 0  ]; then
         echo "$connection_list" | while read -r line; do
-tail = true
+	 
             description=$(echo "$line" | sed -e 's/\\:/-/g' | cut -d ':' -f 1)
             type=$(echo "$line" | sed -e 's/\\:/-/g' | cut -d ':' -f 2)
             device=$(echo "$line" | sed -e 's/\\:/-/g' | cut -d ':' -f 3)
